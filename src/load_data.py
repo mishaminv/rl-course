@@ -3,7 +3,7 @@
 import csv
 from datasets import load_dataset
 
-from .config import PRJ_ROOT
+from config import PRJ_ROOT
 
 
 

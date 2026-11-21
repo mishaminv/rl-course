@@ -1,4 +1,5 @@
 /data/dataset
+/teacher-notebooks
 *.pyc
 .env
 *.egg-info/
