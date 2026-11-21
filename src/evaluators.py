@@ -3,7 +3,7 @@
 import json
 import re
 from decimal import Decimal, InvalidOperation
-
+from config import OLLAMA_BASE_URL
 
 def normalize_final_answer(answer: str) -> Decimal | None:
     """Read only the last #### answer; never search the solution for numbers.
@@ -62,7 +62,7 @@ def LLM_as_evaluator(
             raise ValueError(f"{name} должен быть непустой строкой.")
 
     with OpenAI(
-        base_url="http://localhost:11434/v1", api_key="ollama", timeout=600.0
+        base_url=OLLAMA_BASE_URL, api_key="ollama", timeout=600.0
     ) as client:
         response = client.chat.completions.create(
             model="gpt-oss:20b",

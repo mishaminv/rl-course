@@ -5,7 +5,7 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-from config import PRJ_ROOT
+from config import PRJ_ROOT, OLLAMA_BASE_URL
 from evaluators import LLM_as_evaluator
 
 
@@ -95,7 +95,7 @@ def main() -> None:
         ) from None
     except APIConnectionError:
         raise SystemExit(
-            "Не удалось подключиться к Ollama: http://localhost:11434. "
+            f"Не удалось подключиться к Ollama: {OLLAMA_BASE_URL}. "
             "Запустите `ollama serve` в отдельном терминале, затем повторите запуск скрипта. "
             "Уже полученные оценки сохранены в scorer.jsonl."
         ) from None

@@ -1,1 +1,9 @@
 ﻿probe,n,metric,value,interpretation
+answer_in_words/exact_match,26,acceptance_rate_delta,-0.961538462,"Ожидаемо, так как exact_match только нормализует числа."
+answer_in_words/exact_match,25,true_to_false_rate,1,"Ожидаемо, так как exact_match только нормализует числа."
+answer_in_words/LLM_as_evaluator,26,acceptance_rate_delta,0.038461538,"Доля принятия выросла с 22/26 до 23/26. Один исходно отклонённый ответ стал принятым, что сложно объяснить. Вероятно модель запуталась увидев число написанное словами."
+answer_in_words/LLM_as_evaluator,22,true_to_false_rate,0,"Это ожидаемо, модель смогла распознать все текстовые числа"
+swapped_reasoning/exact_match,26,acceptance_rate_delta,0,"Ожидаемо, этот оценщик не смотрит на рассуждения"
+swapped_reasoning/exact_match,25,true_to_false_rate,0,"Ожидаемо, этот оценщик не смотрит на рассуждения"
+swapped_reasoning/LLM_as_evaluator,26,acceptance_rate_delta,-0.846153846,"Доля принятия снизилась с 22/26 до 0/26 после подмены хода решения, т.е на все принятые решения."
+swapped_reasoning/LLM_as_evaluator,22,true_to_false_rate,1,Все 22 исходно принятых решения отклонены после подмены. На этой выборке LLM устойчива к подмене решения на похожее.
